@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dice new Game</title>
+</head>
+<body>
+<div class="me">
+<h1 class="total">Total new Score:</h1>
+<h2 id="score" class="score"></h2>
+</div>
+<div 1>
+<div class="box" id="start" style="display: block;margin-left: 193px;margin-top: -104px;width: 84px; height:84px;text-align: center;line-height: 79px;">Start</div>
+<div class="box" id="box1" style="display: block;margin-left: 194px; margin-top: 26px;width: 84px; height:84px;text-align: center;line-height: 85px;position: absolute;display: block;">
+<div class="box" id="box-trap1" style="display: block;width: 84px;height: 84px;margin-top: 34px;margin-left: 194px;text-align: center;line-height: 79px;color:red;">X
+<div class="box" id="box-trap2" style="display: block; width: 84px; height: 84px;margin-top: 3%;margin-left: 14%;line-height: 85px;text-align: center;position: absolute;">X</div>
+<div class="box" id="box5" style="display: block; width: 84px; height: 84px;margin-left: 189px;top: 166px;"></div>
+</div>
+</div 1>
+<div 2>
+<div class="box" id="end" style="display: block; width: 84px; height:84px;top: -15px;left: 8px;text-align: center;line-height: 79px;">Finish</div>
+<div class="dice" id="empty"></div>
+<div id="dice0" class="dice firstface">
+<span class="dot center" ></span>
+</div>
+
+<div id="dice1" class="dice secondface">
+  <span class="dot top-left"></span>
+  <span class="dot bottom-right"></span>
+</div>
+
+
+<div id="dice2" class="dice thirdface">
+<span class="dot top-left"></span><span class="dot center"></span><span class="dot bottom-right"></span>
+</div>
+
+<div id="dice3" class="dice fourthface">
+<span class="dot top-left"></span><span class="dot top-right"></span><span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+</div>
+
+<div id="dice4" class="dice fifthface">
+<span class="dot top-left"></span><span class="dot top-right"></span><span class="dot center"></span><span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+</div>
+
+<div id="dice5" class="dice sixthface">
+<span class="dot top-left"></span><span class="dot top-right"></span><span class="dot center-left"></span><span class="dot center-right"></span><span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+</div>
+</div 2>
+
+<div 3>
+<div class="box" id="box-trap3" style="display: block; width: 84px; height: 84px;margin-left: 76%;margin-top: -324px;position: absolute;text-align: center;line-height: 79px;">X</div>
+<div class="box" id="box4"  style="display: block; width: 84px; height: 84px;margin-top: -16%;margin-left: 76%;position: absolute;"></div>
+<div class="box" id="box-trap4" style="display: block; width: 84px; height: 84px;margin-top: -182px;margin-left: 76%; position: absolute;line-height: 77px;text-align: center;">X</div>
+<div class="box" id="box3"  style="display: block; width: 84px; height: 84px;margin-top: 12%;margin-left: 76%;position: absolute;"></div>
+<div class="box" id="box6" style="display: block; width: 84px; height: 84px;margin-left: 77%;margin-top: -59px;"></div>
+</div>
+</div 3>
+<script src="dice.js"></script>
+</body>
+</html>
