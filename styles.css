@@ -153,9 +153,7 @@ align-items: center;
     width: 84px;
     height: 84px;
     color: whitesmoke;
-    left: 1px;
     position: relative;
-    left: 1px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -270,6 +268,7 @@ border:2px groove darkgreen;
 display: flex;;
 top: 213px;
 position: relative;
+
 }
 
 .board2{
@@ -284,6 +283,7 @@ flex-direction: column;
 gap: 213px;
 position: relative;
 align-items: center;
+top: -99px;
 }
 
 html{
@@ -297,7 +297,8 @@ width: 15px;
 height: 15px;
 display: flex;
 position: absolute;
-display:block;
+visibility: hidden;
+
 }
 
 .score{
@@ -313,7 +314,7 @@ color:whitesmoke;
 
 .me{
 display: flex;
-
+position: relative;
 }
 
 #snackbar {
@@ -322,22 +323,22 @@ display: flex;
   margin-left: -125px; 
   background-color: #333; 
   color: #fff; 
-  text-align: center;
-  border-radius: 2px; 
+  text-align: center; 
+  border-radius: 2px;
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
-  left: 50%; 
-  top: 189px; 
+  z-index: 1;
+  left: 40%;
+  bottom: 30px;
 }
 
 
 #snackbar.show {
   visibility: visible; 
+ 
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
 
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;}
@@ -358,11 +359,6 @@ display: flex;
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
-
-
-
-
-
 
 .start{
 
@@ -408,7 +404,7 @@ background: green;
 padding: 20px;
 text-align: center;
 width: 43%;
-height: 22%;
+height: 5%;
 color: white;
 border: none;
 margin-top: 213px;
@@ -563,6 +559,475 @@ margin-top: 213px;
 body{
 background-color: black;
 }
+
+#box7{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box8{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box9{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box10{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box11{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box12{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+#box13{
+    width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.board3{
+display: flex;
+top:-213px;
+position: relative;
+visibility: hidden;
+}
+
+#box14{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box15{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box16{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box17{
+   width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box18{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box19{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box20{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box21{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box22{
+   width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box23{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box24{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box25{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+
+
+#box26{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.board4{
+      display: flex;
+    top: -426px;
+    position: relative;
+    visibility: hidden;
+}
+
+.board5{
+    display: flex
+;
+    position: relative;
+    top: -638px;
+    visibility: hidden;
+    
+}
+
+.board6{
+    display: flex
+;
+    position: relative;
+    top: -850px;
+    visibility: hidden;
+    
+}
+
+.board7{
+    display: flex
+;
+    position: relative;
+    visibility: hidden;
+    
+}
+
+#box27{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box28{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+#box29{
+ width: 84px;
+    height: 84px;
+    display: block;
+    position: relative;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.board7 {
+    display: flex
+;
+    position: relative;
+    top: -1062px;
+}
+
+#boxtrap5{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap6{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap7{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap8{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap9{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap10{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+#boxtrap11{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+
+#boxtrap12{
+display: block;
+    width: 84px;
+    height: 84px;
+    color: whitesmoke;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: gray;
+    border: 2px groove red;
+}
+
+
+
+.level{
+position: relative;
+align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    left: -16%;
+    font-style: italic;
+    font-size: 29px;
+    top:23px;
+}
+
+.levelscore{
+position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    left: -16%;
+    font-style: italic;
+    font-size: 26px;
+    top: 23px;
+}
+
+
+
+
+
+
+
 
 
 

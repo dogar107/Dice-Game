@@ -18,8 +18,8 @@ const game = new Game();
 let position = -1;
 let gameStarted = false;
 let score = 0;
-let totalboxes = 10;
-
+const totalboxes = 40;
+//let currentlevel=1;
 
 const scoreEl = document.getElementById("score");
 const boxes = document.querySelectorAll(".box");
@@ -42,152 +42,183 @@ const customAlert = document.getElementById("customAlert");
 const customAlert1 = document.getElementById("customAlert1");
 const okBtn = document.getElementById("okBtn");
 const cancelBtn = document.getElementById("cancelBtn");
-const showscore= document.getElementById("showscore");
-const traps=["boxtrap1", "boxtrap2", "boxtrap3", "boxtrap4"]
+const showscore = document.getElementById("showscore");
+const Level = document.getElementById("levelscore");
+const au = document.getElementById("au");
+const bu= document.getElementById("bu");
+const cu=document.getElementById("cu");
+const du=document.getElementById("du");
+const eu=document.getElementById("eu");
+const traps = ["boxtrap1", "boxtrap2", "boxtrap3", "boxtrap4", "boxtrap5", "boxtrap6", "boxtrap7", "boxtrap8","boxtrap9", "boxtrap10","boxtrap11","boxtrap12"];
 const diceSound = new Audio("audio/dice-roll.mp3");
-function resetGame(){
-    if (typeof position === "number" && boxes[position]) {
-        boxes[position].innerHTML = "";
-    }
+function resetGame() {
+  position = -1;
+  game.reset();
+  gameStarted = false;
+  scoreEl.textContent = "0";
+  circleDiv.style.visibility="hidden"
+  au.style.visibility="hidden"
+  bu.style.visibility="hidden"
+  cu.style.visibility="hidden"
+  du.style.visibility="hidden"
+  eu.style.visibility="hidden"
 
-    position = -1;
-    game.reset();
-    gameStarted = false;
-    scoreEl.textContent = "0";
-
-    for (let i = 0; i < 6; i++) {
-        const el = document.getElementById(`dice${i}`);
-        if (el) {
-            el.style.display = "none";
-        }
+  for (let i = 0; i < 6; i++) {
+    const el = document.getElementById(`dice${i}`);
+    if (el) {
+      el.style.display = "none";
     }
+  }
 }
 resetbtn.addEventListener("click", resetGame);
-rollbtn.addEventListener("click",()=>{
-
-   const roll = Math.floor(Math.random() * 6) + 1;
-   diceSound.play()
-    if (!gameStarted) {
+rollbtn.addEventListener("click", () => {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  diceSound.play();
+  if (!gameStarted) {
     if (roll === 6 && position === -1) {
-        gameStarted = true;
-        position = 0;
-        game.score = 0; 
-        scoreEl.textContent = "0";
-
+      gameStarted = true;
+      position = 0;
+      game.score = 0;
+      scoreEl.textContent = "0";
+      circleDiv.style.visibility="visible"
     } else {
-        for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 6; i++) {
         const el = document.getElementById(`dice${i}`);
         if (el) {
-            el.style.display = i === roll - 1 ? "block" : "none";
-            el.style.transition = "transform 0.1s ease";
+          el.style.display = i === roll - 1 ? "block" : "none";
+          el.style.transition = "transform 0.1s ease";
 
           el.style.transform = "translateX(-5px)";
-          setTimeout(() => { el.style.transform = "translateX(5px)"; }, 100);
-          setTimeout(() => { el.style.transform = "translateX(-5px)"; }, 200);
-          setTimeout(() => { el.style.transform = "translateX(5px)"; }, 300);
-          setTimeout(() => { el.style.transform = "translateX(0)"; }, 400);
+          setTimeout(() => {
+            el.style.transform = "translateX(5px)";
+          }, 100);
+          setTimeout(() => {
+            el.style.transform = "translateX(-5px)";
+          }, 200);
+          setTimeout(() => {
+            el.style.transform = "translateX(5px)";
+          }, 300);
+          setTimeout(() => {
+            el.style.transform = "translateX(0)";
+          }, 400);
         }
-    }  
+      }
     }
-} else {
+  } else {
     position += roll;
-    game.score += roll; 
-    scoreEl.textContent = game.score; 
-}
+    game.score += roll;
+    scoreEl.textContent = game.score;
+  }
 
-
-    
-        const totalboxes= boxes.length;
-        if (position >= totalboxes) {
-            position = totalboxes - 1;
-           showToast("Game Over!☠️");
-           gameStarted=false;
-           resetGame()
-          customAlert.style.display = "none";
-          setTimeout(()=>{
-          customAlert.style.display = "block";
-    },2000)
-
-          okBtn.onclick = () => {
-          customAlert.style.display = "none";
-          resetGame(); 
-};
-
-        cancelBtn.onclick = () => {
-        customAlert.style.display = "none";
-};
-       }
-
-        function showToast(message) {
-        const x = document.getElementById("snackbar");
-        x.textContent = message;
-        x.classList.add("show");
-        setTimeout(() => {
-        x.classList.remove("show");
-    }, 3000); 
-
-}
-
-
-
-    if (boxes[position] && traps.includes(boxes[position].id)) {
-    showToast("Oh no! You hit a trap!💀");
-    gameStarted=false;
-    position=-1;
-    game.reset();
-    scoreEl.textContent="0"
+  const totalboxes = boxes.length;
+  if (position >= totalboxes) {
+    position = totalboxes - 1;
+    showToast("Game Over!☠️");
     customAlert.style.display = "none";
-    setTimeout(()=>{
-    customAlert.style.display = "block";
-    },2000)
-    
+    scoreEl.textContent = "0";
+    game.reset();
+    resetGame();
 
-okBtn.onclick = () => {
-  customAlert.style.display = "none";
-  resetGame(); 
-};
+    setTimeout(() => {
+      customAlert.style.display = "block";
+    }, 2000);
 
-cancelBtn.onclick = () => {
-  customAlert.style.display = "none";
-};
+    okBtn.onclick = () => {
+      customAlert.style.display = "none";
+      resetGame();
+    };
 
+    cancelBtn.onclick = () => {
+      customAlert.style.display = "none";
+    };
+  }
+
+  function showToast(message) {
+    const x = document.getElementById("snackbar");
+    x.textContent = message;
+    x.classList.add("show");
+    setTimeout(() => {
+      x.classList.remove("show");
+    }, 3000);
+  }
+
+  if (boxes[position] && traps.includes(boxes[position].id)) {
+    showToast("Oh no! You hit a trap!💀");
+    customAlert.style.display = "none";
+    setTimeout(() => {
+      resetGame();
+      game.reset();
+      scoreEl.textContent = "0";
+      customAlert.style.display = "block";
+      Level.style.visibility="hidden"
+    }, 2000);
+
+    okBtn.onclick = () => {
+      customAlert.style.display = "none";
+      resetGame();
+    };
+
+    cancelBtn.onclick = () => {
+      customAlert.style.display = "none";
+    };
+  }
+
+  if(position===10 || position>10){
+  Level.textContent="1"
+  Level.style.visibility="visible"
+  au.style.visibility="visible"
+  bu.style.visibility="visible"
+  
+
+  }
+  if(position===20 || position>20){
+  Level.textContent="2"
+  Level.style.visibility="visible"
+  cu.style.visibility="visible"
+  du.style.visibility="visible"
+  }
+  if(position===30 || position>30){
+  Level.textContent="3"
+  Level.style.visibility="visible"
+  eu.style.visibility="visible"
+  }
+  if(position === 40){
+  Level.textContent="4"
+  Level.style.visibility="visible"
+
+  }
+
+  if (boxes[position] && boxes[position].id === "end") {
+    showToast("You Win!🎉");
+    game.reset();
+    gameStarted=false;
+    setTimeout(() => {
+      scoreEl.textContent = "0";
+      Level.style.visibility="hidden"
+    }, 2000);
+  }
+  for (let i = 0; i < 6; i++) {
+    const el = document.getElementById(`dice${i}`);
+    if (el) {
+      el.style.display = i === roll - 1 ? "block" : "none";
+      el.style.transition = "transform 0.1s ease";
+
+      el.style.transform = "translateX(-5px)";
+      setTimeout(() => {
+        el.style.transform = "translateX(5px)";
+      }, 100);
+      setTimeout(() => {
+        el.style.transform = "translateX(-5px)";
+      }, 200);
+      setTimeout(() => {
+        el.style.transform = "translateX(5px)";
+      }, 300);
+      setTimeout(() => {
+        el.style.transform = "translateX(0)";
+      }, 400);
     }
-    
-    if(boxes[position] && boxes[position].id === "end"){
-    showToast("You Win!🎉")
-    }
-        for (let i = 0; i < 6; i++) {
-        const el = document.getElementById(`dice${i}`);
-        if (el) {
-            el.style.display = i === roll - 1 ? "block" : "none";
-            el.style.transition = "transform 0.1s ease";
-
-          el.style.transform = "translateX(-5px)";
-          setTimeout(() => { el.style.transform = "translateX(5px)"; }, 100);
-          setTimeout(() => { el.style.transform = "translateX(-5px)"; }, 200);
-          setTimeout(() => { el.style.transform = "translateX(5px)"; }, 300);
-          setTimeout(() => { el.style.transform = "translateX(0)"; }, 400);
-        }
-    }       
-         if (boxes[position]) {
-         boxes[position].appendChild(circleDiv);
-    }
-    if(gameStarted===true && position===0){
-    showscore.style.display="block"
-    setTimeout(()=>{
-    showscore.style.display="none"
-    },2000)
-    }else{
-    showscore.style.display="none"
-    }
-    
-  });
-
-
-    
-
-
-
-
- 
-
+  }
+  if (boxes[position]) {
+    boxes[position].appendChild(circleDiv);
+  }
+});
